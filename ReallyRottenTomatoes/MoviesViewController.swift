@@ -45,7 +45,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         println("I'm at row: \(indexPath.row), section: \(indexPath.section)")
     
         var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as MovieCell
-        var movie = movies[indexPath.row]
+        
+        var movie = movies[indexPath.row] as NSDictionary
         
         cell.movieTitleLabel.text = movie["title"] as? String
         cell.synopsisLabel.text = movie["synopsis"] as? String
@@ -53,9 +54,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         var posters = movie["posters"] as NSDictionary
         var posterUrl = posters["thumbnail"] as String
         println(posterUrl)
-
-        cell.posterView.setImageWithURL(NSURL(string: posterUrl))
+        if (!posterUrl.isEmpty) {
+            cell.posterView.setImageWithURL(NSURL(string: posterUrl))
         
+        }
         return cell
     }
     
