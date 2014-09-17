@@ -79,6 +79,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         println("I'm at row: \(indexPath.row), section: \(indexPath.section)")
     
         var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as MovieCell
+        cell.accessoryType = UITableViewCellAccessoryType.None
         
         var movie = movies[indexPath.row] as NSDictionary
         
