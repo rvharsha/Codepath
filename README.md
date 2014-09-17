@@ -1,7 +1,7 @@
-Codepath
+Codepath Assignment 1 - Rotten Tomatoes
 ========
 
-Codepath Assignments
+Note: I will be uploading a few more optionals tomorrow morning.
 
 
 1. How many hours did it take to complete? 
